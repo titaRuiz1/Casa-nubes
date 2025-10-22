@@ -1,16 +1,284 @@
 ---
-
+import '../styles/global.css';
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>La Casa del Bosque de Nubes</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-white text-gray-900">
+		<!-- Hero Section -->
+		<section class="relative h-screen bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2000');">
+			<div class="absolute inset-0 bg-black bg-opacity-40"></div>
+			<nav class="relative z-10 flex justify-between items-center px-8 py-6 text-white">
+				<h1 class="text-xl font-serif tracking-wider">LA CASA DEL BOSQUE DE NUBES</h1>
+				<ul class="flex gap-8 text-sm uppercase tracking-wide">
+					<li><a href="#inicio" class="hover:text-yellow-400 transition">Inicio</a></li>
+					<li><a href="#nuestra-casa" class="hover:text-yellow-400 transition">Nuestra Casa</a></li>
+					<li><a href="#contacto" class="hover:text-yellow-400 transition">Contacto</a></li>
+					<li><a href="#habitaciones" class="hover:text-yellow-400 transition">Habitaciones/Glamap</a></li>
+					<li><a href="#habitaciones-prea" class="hover:text-yellow-400 transition">Habitaciones/Prea</a></li>
+				</ul>
+			</nav>
+			<div class="relative z-10 h-full flex items-center justify-center">
+				<h2 class="text-6xl font-serif text-white text-center">LA CASA DEL BOSQUE DE NUBES</h2>
+			</div>
+		</section>
+
+		<!-- Bienvenidos Section -->
+		<section class="relative">
+			<div class="relative h-[600px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000');">
+				<div class="absolute inset-0 bg-black bg-opacity-20"></div>
+				<div class="relative z-10 h-full flex items-center">
+					<div class="bg-yellow-500 bg-opacity-90 p-12 ml-20 max-w-xl">
+						<h3 class="text-3xl font-serif mb-6 text-gray-900">BIENVENIDOS</h3>
+						<p class="text-gray-900 leading-relaxed">
+							La Casa del Bosque de Nubes, un refugio custodiado por la catarata de Gocta en medio del bosque nuboso.
+							Despierta en esta montaña Chachapoya, tierra de aventuras y misticismo ancestrales.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Galería Title -->
+			<div class="bg-[#7a8450] py-4">
+				<h3 class="text-3xl font-serif text-white text-center">GALERÍA</h3>
+			</div>
+		</section>
+
+		<!-- Galería Grid -->
+		<section class="bg-[#7a8450] px-8 pb-12">
+			<div class="grid grid-cols-3 gap-4 max-w-6xl mx-auto">
+				<div class="h-64 bg-cover bg-center rounded" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800');"></div>
+				<div class="h-64 bg-cover bg-center rounded" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800');"></div>
+				<div class="h-64 bg-cover bg-center rounded" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800');"></div>
+				<div class="h-64 bg-cover bg-center rounded" style="background-image: url('https://images.unsplash.com/photo-1600566753051-f0b8c0c1a7a6?q=80&w=800');"></div>
+				<div class="h-64 bg-cover bg-center rounded" style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=800');"></div>
+				<div class="h-64 bg-cover bg-center rounded" style="background-image: url('https://images.unsplash.com/photo-1600566753104-c4e1c3d8e16d?q=80&w=800');"></div>
+				<div class="h-64 bg-cover bg-center rounded" style="background-image: url('https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?q=80&w=800');"></div>
+				<div class="h-64 bg-cover bg-center rounded" style="background-image: url('https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?q=80&w=800');"></div>
+				<div class="h-64 bg-cover bg-center rounded" style="background-image: url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=800');"></div>
+			</div>
+		</section>
+
+		<!-- Lugares Cercanos -->
+		<section class="bg-gradient-to-b from-gray-800 to-gray-900 py-16">
+			<h3 class="text-3xl font-serif text-white text-center mb-12">LUGARES CERCANOS</h3>
+			<div class="grid grid-cols-4 gap-8 max-w-7xl mx-auto px-8">
+				<div class="relative h-72 bg-cover bg-center rounded-lg overflow-hidden group" style="background-image: url('https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=80&w=800');">
+					<div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition"></div>
+					<div class="absolute bottom-6 left-6 text-white">
+						<h4 class="text-2xl font-serif">Catarata de Gocta</h4>
+					</div>
+				</div>
+				<div class="relative h-72 bg-cover bg-center rounded-lg overflow-hidden group" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800');">
+					<div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition"></div>
+					<div class="absolute bottom-6 left-6 text-white">
+						<h4 class="text-2xl font-serif">Catarata Chinata</h4>
+					</div>
+				</div>
+				<div class="relative h-72 bg-cover bg-center rounded-lg overflow-hidden group" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800');">
+					<div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition"></div>
+					<div class="absolute bottom-6 left-6 text-white">
+						<h4 class="text-2xl font-serif">Fortaleza de Kuélap</h4>
+					</div>
+				</div>
+				<div class="relative h-72 bg-cover bg-center rounded-lg overflow-hidden group" style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800');">
+					<div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition"></div>
+					<div class="absolute bottom-6 left-6 text-white">
+						<h4 class="text-2xl font-serif">Catarata Yumbilla</h4>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Nuestros Servicios -->
+		<section class="bg-gradient-to-b from-gray-900 to-black py-16">
+			<h3 class="text-5xl font-serif text-white text-center mb-16">NUESTROS SERVICIOS</h3>
+			<div class="grid grid-cols-4 gap-12 max-w-7xl mx-auto px-8">
+				<!-- Servicio 1 -->
+				<div class="text-center text-white">
+					<div class="mb-4 flex justify-center">
+						<svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+						</svg>
+					</div>
+					<h4 class="text-xl font-serif mb-3">ESPACIO DE FOGATAS</h4>
+					<p class="text-sm text-gray-300">Zona de fogatas para noches mágicas bajo el impresionante cielo Chachapoya.</p>
+				</div>
+
+				<!-- Servicio 2 -->
+				<div class="text-center text-white">
+					<div class="mb-4 flex justify-center">
+						<svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+						</svg>
+					</div>
+					<h4 class="text-xl font-serif mb-3">OBSERVATORIO PANORÁMICO</h4>
+					<p class="text-sm text-gray-300">Privilegiada vista panorámica a todo el Valle de Las Cataratas y una vista privilegiada a la majestuosa Gocta.</p>
+				</div>
+
+				<!-- Servicio 3 -->
+				<div class="text-center text-white">
+					<div class="mb-4 flex justify-center">
+						<svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"></path>
+						</svg>
+					</div>
+					<h4 class="text-xl font-serif mb-3">PARRILLA</h4>
+					<p class="text-sm text-gray-300">Parrilla móvil disponible bajo pedido previo sin costo adicional.</p>
+				</div>
+
+				<!-- Servicio 4 -->
+				<div class="text-center text-white">
+					<div class="mb-4 flex justify-center">
+						<svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+					</div>
+					<h4 class="text-xl font-serif mb-3">EQUIPAMIENTO TOTAL</h4>
+					<p class="text-sm text-gray-300">En general la casa está totalmente equipada para dar máxima comodidad al visitante (batas incluidas).</p>
+				</div>
+
+				<!-- Servicio 5 -->
+				<div class="text-center text-white">
+					<div class="mb-4 flex justify-center">
+						<svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path>
+						</svg>
+					</div>
+					<h4 class="text-xl font-serif mb-3">ESPACIO DE RELAJACIÓN</h4>
+					<p class="text-sm text-gray-300">Diversas terrazas y zonas propias para la relajación (en sintonía con la naturaleza y el susurro de las cataratas del valle).</p>
+				</div>
+
+				<!-- Servicio 6 -->
+				<div class="text-center text-white">
+					<div class="mb-4 flex justify-center">
+						<svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+						</svg>
+					</div>
+					<h4 class="text-xl font-serif mb-3">JARDÍN</h4>
+					<p class="text-sm text-gray-300">Múltiples zonas de jardín.</p>
+				</div>
+
+				<!-- Servicio 7 -->
+				<div class="text-center text-white">
+					<div class="mb-4 flex justify-center">
+						<svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path>
+						</svg>
+					</div>
+					<h4 class="text-xl font-serif mb-3">WIFI</h4>
+					<p class="text-sm text-gray-300">Internet satelital.</p>
+				</div>
+
+				<!-- Servicio 8 -->
+				<div class="text-center text-white">
+					<div class="mb-4 flex justify-center">
+						<svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+						</svg>
+					</div>
+					<h4 class="text-xl font-serif mb-3">PARKING</h4>
+					<p class="text-sm text-gray-300">Lugar de estacionamiento en estacionamiento privado.</p>
+				</div>
+
+				<!-- Servicio 9 -->
+				<div class="text-center text-white">
+					<div class="mb-4 flex justify-center">
+						<svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+						</svg>
+					</div>
+					<h4 class="text-xl font-serif mb-3">LAVADORA</h4>
+					<p class="text-sm text-gray-300">Máquina lavadora.</p>
+				</div>
+
+				<!-- Servicio 10 -->
+				<div class="text-center text-white">
+					<div class="mb-4 flex justify-center">
+						<svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+						</svg>
+					</div>
+					<h4 class="text-xl font-serif mb-3">MÁQUINA DE CAFÉ</h4>
+					<p class="text-sm text-gray-300">Máquina de café con trituradora de granos para disfrutar el famoso café de la zona en su estado más fresco.</p>
+				</div>
+
+				<!-- Servicio 11 -->
+				<div class="text-center text-white col-span-2 col-start-2">
+					<div class="mb-4 flex justify-center">
+						<svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+						</svg>
+					</div>
+					<h4 class="text-xl font-serif mb-3">HORNO</h4>
+					<p class="text-sm text-gray-300">Cocina totalmente equipada con horno, juego completo de ollas, moldes, tablas de picar, máquina de raclette y más.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contacto -->
+		<section id="contacto" class="py-16 bg-gray-100">
+			<div class="max-w-6xl mx-auto px-8 grid grid-cols-2 gap-16">
+				<div>
+					<h3 class="text-3xl font-serif mb-6">La Casa del Bosque de Nubes</h3>
+					<p class="mb-2">Camino a Gocta,</p>
+					<p class="mb-4">Cocachimba, Amazonas, 01100, Perú</p>
+					<p class="mb-2 text-blue-600">reservas@casanubegocta.com</p>
+					<p class="text-gray-700">+51942242232</p>
+				</div>
+				<div>
+					<form class="space-y-4">
+						<div>
+							<label class="block text-sm mb-2">Nombre completo</label>
+							<input type="text" placeholder="Nombre" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+						</div>
+						<div>
+							<label class="block text-sm mb-2">Número de teléfono</label>
+							<input type="tel" placeholder="Número de teléfono" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+						</div>
+						<div>
+							<label class="block text-sm mb-2">Tu e-mail</label>
+							<input type="email" placeholder="E-mail" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+						</div>
+						<div>
+							<label class="block text-sm mb-2">Tu mensaje</label>
+							<textarea placeholder="Mensaje" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"></textarea>
+						</div>
+						<div class="flex items-start gap-2">
+							<input type="checkbox" id="privacy" class="mt-1" />
+							<label for="privacy" class="text-xs text-gray-600">
+								Estoy de acuerdo con la política de privacidad
+							</label>
+						</div>
+						<p class="text-xs text-gray-500">
+							Los datos recogidos en este formulario son procesados por La Casa del Bosque de Nubes y Amenbiz Solutions para gestionar las informaciones de solicitud de contacto en el sitio web https://www.casanubegocta.com de acuerdo con nuestra Política de Privacidad.
+						</p>
+						<button type="submit" class="bg-gray-700 hover:bg-gray-800 text-white px-8 py-3 rounded transition">
+							Envía tu mensaje
+						</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="bg-white border-t border-gray-200 py-8">
+			<div class="max-w-6xl mx-auto px-8">
+				<h3 class="text-3xl font-serif text-center mb-6">LA CASA DEL BOSQUE DE NUBES</h3>
+				<nav class="flex justify-center gap-12 text-sm">
+					<a href="#inicio" class="hover:text-blue-600 transition">Inicio</a>
+					<a href="#habitaciones" class="hover:text-blue-600 transition">Habitaciones</a>
+					<a href="#contacto" class="hover:text-blue-600 transition">Contacto</a>
+				</nav>
+			</div>
+		</footer>
 	</body>
 </html>
