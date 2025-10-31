@@ -1,0 +1,173 @@
+---
+import { images } from '../../data/images.js';
+---
+
+<section id="bienvenidos" class="relative bg-section-brown py-10">
+  <div class="welcome-container">
+    <!-- Background Image -->
+    <div class="welcome-image-wrapper">
+      <img
+        src={images.welcome.default}
+        alt="Bienvenidos a Casa del Bosque de Nubes"
+        class="h-full object-cover w-full"
+      />
+    </div>
+
+    <!-- Floating Text Box -->
+    <div class="welcome-text-overlay bg-background-yellow">
+        <h2 class="welcome-title">
+          BIENVENIDOS
+        </h2>
+
+        <!-- Separator -->
+        <div class="welcome-separator-container">
+          <hr class="welcome-separator-line" />
+          <div class="welcome-separator-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 357 357">
+              <path fill="currentColor" d="M357,204H0v-51h357V204z"></path>
+            </svg>
+          </div>
+          <hr class="welcome-separator-line" />
+        </div>
+
+        <div class="welcome-text">
+          <p>
+            La Casa del Bosque de Nubes, un refugio custodiado por la catarata de Gocta en medio del bosque nuboso. Despierta en esta montaña Chachapoya, tierra de aventuras y misticismo ancestrales.
+          </p>
+        </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .welcome-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .welcome-image-wrapper {
+    width: 70%;
+    height: 600px;
+    overflow: hidden;
+    margin-left: auto;
+  }
+
+  .welcome-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .welcome-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 35%;
+    max-width: 500px;
+    z-index: 10;
+  }
+
+  .welcome-box {
+    background-color: var(--color-section-beige);
+    padding: 3rem 2.5rem;
+  }
+
+  .welcome-title {
+    color: var(--color-section-dark);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .welcome-separator-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .welcome-separator-line {
+    flex: 1;
+    height: 1px;
+    background-color: white;
+    border: none;
+    max-width: 100px;
+  }
+
+  .welcome-separator-icon {
+    color: var(--color-section-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .welcome-text {
+    color: var(--color-section-dark);
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .welcome-text p {
+    margin: 0;
+  }
+
+  /* Mobile: Text box below image */
+  @media (max-width: 768px) {
+    .welcome-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .welcome-image-wrapper {
+      height: 400px;
+      position: relative;
+    }
+
+    .welcome-text-overlay {
+      position: static;
+      transform: none;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .welcome-box {
+      padding: 2rem 1.5rem;
+    }
+
+    .welcome-title {
+      font-size: 2rem;
+    }
+
+    .welcome-text {
+      font-size: 0.95rem;
+    }
+
+    .welcome-separator-line {
+      max-width: 60px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .welcome-image-wrapper {
+      height: 300px;
+    }
+
+    .welcome-box {
+      padding: 1.5rem 1.25rem;
+    }
+
+    .welcome-title {
+      font-size: 1.75rem;
+    }
+
+    .welcome-text {
+      font-size: 0.9rem;
+    }
+  }
+</style>

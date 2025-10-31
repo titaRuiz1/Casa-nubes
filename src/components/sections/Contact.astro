@@ -1,0 +1,273 @@
+---
+import { getTranslation } from '../../lib/translations.js';
+
+const lang = 'es';
+const t = getTranslation(lang);
+---
+
+<section id="contacto" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="section-title">
+        {t('contact.title')}
+      </h2>
+      <p class="section-subtitle">
+        {t('contact.subtitle')}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div>
+            <h3 class="info-title">Dirección</h3>
+            <p class="info-text">{t('contact.address')}</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div>
+            <h3 class="info-title">Teléfono</h3>
+            <a href={`tel:${t('contact.phone')}`} class="info-link">
+              {t('contact.phone')}
+            </a>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">✉️</div>
+          <div>
+            <h3 class="info-title">Email</h3>
+            <a href={`mailto:${t('contact.email')}`} class="info-link">
+              {t('contact.email')}
+            </a>
+          </div>
+        </div>
+
+        <div class="social-section">
+          <h3 class="info-title mb-4">Redes Sociales</h3>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="form-wrapper">
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name" class="form-label">
+              {t('contact.form.name')}
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">
+              {t('contact.form.email')}
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">
+              {t('contact.form.phone')}
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">
+              {t('contact.form.message')}
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              class="form-input form-textarea"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary w-full">
+            {t('contact.form.send')}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+  }
+
+  .info-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(4px);
+  }
+
+  .info-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  .info-title {
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+  }
+
+  .info-text {
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  .info-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .info-link:hover {
+    color: #C09920;
+    text-decoration: underline;
+  }
+
+  .social-section {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .social-link {
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .social-link:hover {
+    transform: scale(1.15) rotate(5deg);
+  }
+
+  .form-wrapper {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-label {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.375rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  @media (max-width: 1024px) {
+    .form-wrapper {
+      padding: 2rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .form-wrapper {
+      padding: 1.5rem;
+    }
+
+    .info-card {
+      padding: 1.25rem;
+    }
+
+    .info-icon {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<script>
+  const form = document.querySelector('.contact-form') as HTMLFormElement;
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Formulario enviado! En producción, esto enviaría el mensaje.');
+    form.reset();
+  });
+</script>

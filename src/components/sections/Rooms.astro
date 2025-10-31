@@ -1,0 +1,151 @@
+---
+import { getTranslation } from '../../lib/translations.js';
+import { getRooms } from '../../data/rooms.js';
+
+const lang = 'es';
+const t = getTranslation(lang);
+const rooms = getRooms(lang);
+---
+
+<section id="habitaciones" class="py-20 bg-white">
+  <div class="container mx-auto px-4 max-w-7xl">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="section-title">
+        {t('rooms.title')}
+      </h2>
+      <p class="section-subtitle">
+        {t('rooms.subtitle')}
+      </p>
+    </div>
+
+    <!-- Rooms Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      {rooms.map((room) => (
+        <div class="room-card">
+          <div class="room-image-wrapper">
+            <img
+              src={room.image}
+              alt={room.name}
+              class="room-image"
+            />
+            <div class="room-overlay">
+              <a href={`/habitacion/${room.id}`} class="view-details-btn">
+                {t('rooms.view')}
+              </a>
+            </div>
+          </div>
+          <div class="room-content">
+            <h3 class="room-title">{room.name}</h3>
+            <p class="room-description">{room.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .room-card {
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+  }
+
+  .room-card:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+  }
+
+  .room-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+  }
+
+  .room-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .room-card:hover .room-image {
+    transform: scale(1.1);
+  }
+
+  .room-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(46, 41, 37, 0.85) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .room-card:hover .room-overlay {
+    opacity: 1;
+  }
+
+  .view-details-btn {
+    background-color: var(--color-accent);
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .room-card:hover .view-details-btn {
+    transform: translateY(0);
+  }
+
+  .view-details-btn:hover {
+    background-color: #9d9340;
+    transform: translateY(-2px);
+  }
+
+  .room-content {
+    padding: 2rem;
+  }
+
+  .room-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .room-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-light-text);
+  }
+
+  @media (max-width: 768px) {
+    .room-image-wrapper {
+      height: 280px;
+    }
+
+    .room-content {
+      padding: 1.5rem;
+    }
+
+    .room-title {
+      font-size: 1.5rem;
+    }
+  }
+</style>

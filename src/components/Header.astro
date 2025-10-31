@@ -1,0 +1,124 @@
+---
+---
+
+<header class="site-header">
+  <div class="header-container">
+    <h1 class="site-title">La Casa del Bosque de Nubes</h1>
+    <nav class="nav">
+      <ul class="menu" role="list">
+        <li><a href="/">INICIO</a></li>
+        <li><a href="/nuestra-casa">NUESTRA CASA</a></li>
+        <li><a href="/contacto">CONTACTO</a></li>
+        <li><a href="/habitacion/gatmalap">HABITACIÓN GATMALAP</a></li>
+        <li><a href="/habitacion/pirka">HABITACIÓN PIRKA</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: transparent;
+  }
+
+  .header-container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: var(--space-4) var(--space-4);
+    text-align: center;
+  }
+
+  .site-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin: 0 0 var(--space-4) 0;
+    text-transform: uppercase;
+    font-family: 'Georgia', serif;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    opacity: 0.95;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+  .menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+  }
+
+  .menu a:hover {
+    opacity: 1;
+  }
+
+  .menu a:hover::after,
+  .menu a[aria-current='page']::after {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .header-container {
+      padding: var(--space-3) var(--space-3);
+    }
+
+    .site-title {
+      margin-bottom: var(--space-3);
+      font-size: 1.25rem;
+    }
+
+    .menu {
+      gap: var(--space-3);
+    }
+
+    .menu a {
+      font-size: 0.7rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .menu {
+      gap: var(--space-2);
+    }
+
+    .menu a {
+      font-size: 0.65rem;
+    }
+  }
+</style>
+

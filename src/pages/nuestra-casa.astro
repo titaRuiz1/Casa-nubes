@@ -1,0 +1,261 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'es';
+---
+
+<Layout
+  title="Nuestra Casa - Casa del Bosque de Nubes"
+  description="Descubre nuestra casa tradicional en el corazón de Cocachimba, Amazonas"
+  lang={lang}
+>
+  <Header lang={lang} />
+
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section class="hero-page">
+      <div class="hero-bg" style="background-image: url('/images/house-exterior.jpg');"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Nuestra Casa</h1>
+        <p class="hero-subtitle">Arquitectura tradicional en armonía con la naturaleza</p>
+      </div>
+    </section>
+
+    <!-- About Our House -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="prose-section">
+          <h2 class="section-title text-center mb-8">Un Refugio en el Bosque de Nubes</h2>
+
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Casa del Bosque de Nubes es una construcción tradicional que combina la arquitectura
+            característica de la región de Amazonas con las comodidades modernas que nuestros
+            huéspedes necesitan.
+          </p>
+
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Situada en el pintoresco pueblo de Cocachimba, a solo minutos de la impresionante
+            Catarata de Gocta, nuestra casa ofrece un ambiente acogedor y familiar, perfecto
+            para quienes buscan desconectarse del estrés urbano y reconectarse con la naturaleza.
+          </p>
+
+          <p class="text-lg text-gray-700 leading-relaxed mb-8">
+            Con vistas panorámicas a las montañas y el bosque nuboso circundante, cada rincón
+            de nuestra casa ha sido diseñado pensando en la comodidad y el bienestar de nuestros
+            visitantes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-7xl">
+        <h2 class="section-title text-center mb-12">Características de Nuestra Casa</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="feature-card-large">
+            <div class="feature-card-icon">🏗️</div>
+            <h3 class="feature-card-title">Arquitectura Tradicional</h3>
+            <p class="feature-card-text">
+              Construcción inspirada en las técnicas ancestrales de la región,
+              utilizando materiales locales y sostenibles.
+            </p>
+          </div>
+
+          <div class="feature-card-large">
+            <div class="feature-card-icon">🌄</div>
+            <h3 class="feature-card-title">Vistas Panorámicas</h3>
+            <p class="feature-card-text">
+              Disfruta de vistas espectaculares a las montañas y al bosque nuboso
+              desde diferentes puntos de la casa.
+            </p>
+          </div>
+
+          <div class="feature-card-large">
+            <div class="feature-card-icon">🌺</div>
+            <h3 class="feature-card-title">Jardines Naturales</h3>
+            <p class="feature-card-text">
+              Amplios espacios verdes con plantas nativas que atraen aves y
+              mariposas locales.
+            </p>
+          </div>
+
+          <div class="feature-card-large">
+            <div class="feature-card-icon">🔥</div>
+            <h3 class="feature-card-title">Espacios Comunes</h3>
+            <p class="feature-card-text">
+              Sala con chimenea, comedor amplio y terrazas perfectas para
+              compartir momentos únicos.
+            </p>
+          </div>
+
+          <div class="feature-card-large">
+            <div class="feature-card-icon">🍳</div>
+            <h3 class="feature-card-title">Cocina Equipada</h3>
+            <p class="feature-card-text">
+              Cocina completa con todos los utensilios necesarios para preparar
+              deliciosas comidas caseras.
+            </p>
+          </div>
+
+          <div class="feature-card-large">
+            <div class="feature-card-icon">🔭</div>
+            <h3 class="feature-card-title">Observatorio</h3>
+            <p class="feature-card-text">
+              Espacio especial para observar las estrellas en las noches despejadas
+              del bosque nuboso.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src="/images/house-history.jpg"
+              alt="Historia de la casa"
+              class="rounded-lg shadow-xl w-full object-cover"
+              style="height: 400px;"
+            />
+          </div>
+          <div>
+            <h2 class="section-title text-left mb-6">Nuestra Historia</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">
+              Fundada por una familia local apasionada por compartir la belleza
+              de Cocachimba con el mundo, Casa del Bosque de Nubes nació del
+              deseo de crear un espacio donde los viajeros pudieran experimentar
+              la auténtica vida en los Andes amazónicos.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">
+              Hemos preservado las tradiciones constructivas de nuestros ancestros
+              mientras incorporamos las comodidades que hacen de tu estadía una
+              experiencia inolvidable.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Cada detalle de nuestra casa cuenta una historia de respeto por
+              la naturaleza y la cultura local.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
+
+<style>
+  .hero-page {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(46, 41, 37, 0.5) 0%,
+      rgba(46, 41, 37, 0.7) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 2rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .prose-section {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .feature-card-large {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .feature-card-large:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    border-color: var(--color-accent);
+  }
+
+  .feature-card-icon {
+    font-size: 4rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .feature-card-title {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .feature-card-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-light-text);
+  }
+
+  @media (max-width: 768px) {
+    .hero-page {
+      height: 50vh;
+      min-height: 350px;
+    }
+
+    .feature-card-large {
+      padding: 2rem 1.5rem;
+    }
+
+    .feature-card-icon {
+      font-size: 3rem;
+    }
+  }
+</style>

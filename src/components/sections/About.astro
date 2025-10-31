@@ -1,0 +1,111 @@
+---
+import { getTranslation } from '../../lib/translations.js';
+
+const lang = 'es';
+const t = getTranslation(lang);
+---
+
+<section id="nosotros" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4 max-w-7xl">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="section-title">
+        {t('about.title')}
+      </h2>
+      <p class="section-subtitle">
+        {t('about.subtitle')}
+      </p>
+    </div>
+
+    <!-- Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Image -->
+      <div class="order-2 lg:order-1">
+        <div class="image-wrapper">
+          <img
+            src="/images/house-exterior.jpg"
+            alt="Casa del Bosque de Nubes"
+            class="rounded-lg shadow-2xl w-full object-cover"
+            style="height: 500px;"
+          />
+        </div>
+      </div>
+
+      <!-- Text Content -->
+      <div class="order-1 lg:order-2">
+        <p class="text-lg text-gray-700 leading-relaxed mb-8">
+          {t('about.description')}
+        </p>
+
+        <!-- Feature Grid -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="feature-card">
+            <div class="feature-icon">🏔️</div>
+            <p class="feature-text">Arquitectura Tradicional</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌿</div>
+            <p class="feature-text">Naturaleza Pura</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💧</div>
+            <p class="feature-text">Vista a Gocta</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <p class="feature-text">Experiencia Única</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
+  .image-wrapper img {
+    transition: transform 0.5s ease;
+  }
+
+  .image-wrapper:hover img {
+    transform: scale(1.05);
+  }
+
+  .feature-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .feature-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+    border-color: var(--color-accent);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-text {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 1024px) {
+    .image-wrapper img {
+      height: 400px !important;
+    }
+  }
+</style>

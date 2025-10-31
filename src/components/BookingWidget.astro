@@ -1,0 +1,85 @@
+---
+const { lang = 'es' } = Astro.props;
+---
+
+<div class="booking-widget card">
+  <div class="muted" style="margin-bottom: 8px; font-size: 14px;">
+    {lang === 'es' ? 'Busca disponibilidad' : 'Search availability'}
+  </div>
+
+  <div class="booking-row">
+    <label>
+      <div class="muted label-text">Check-in</div>
+      <input class="input" type="date" id="checkin" />
+    </label>
+    <label>
+      <div class="muted label-text">Check-out</div>
+      <input class="input" type="date" id="checkout" />
+    </label>
+  </div>
+
+  <div class="booking-row">
+    <label>
+      <div class="muted label-text">{lang === 'es' ? 'Adultos' : 'Adults'}</div>
+      <input class="input" type="number" min="1" value="2" id="adults" />
+    </label>
+    <label>
+      <div class="muted label-text">{lang === 'es' ? 'Niños' : 'Children'}</div>
+      <input class="input" type="number" min="0" value="0" id="children" />
+    </label>
+  </div>
+
+  <div style="margin-top: 12px;">
+    <a class="btn btn-block" href="/booking">
+      {lang === 'es' ? 'Buscar disponibilidad' : 'Search availability'}
+    </a>
+  </div>
+</div>
+
+<style>
+  .booking-widget {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .booking-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .label-text {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .btn-block {
+    width: 100%;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .booking-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  // Set minimum date to today
+  const today = new Date().toISOString().split('T')[0];
+  const checkinInput = document.getElementById('checkin') as HTMLInputElement;
+  const checkoutInput = document.getElementById('checkout') as HTMLInputElement;
+
+  if (checkinInput) checkinInput.min = today;
+  if (checkoutInput) checkoutInput.min = today;
+
+  // Update checkout min date when checkin changes
+  checkinInput?.addEventListener('change', (e) => {
+    const target = e.target as HTMLInputElement;
+    if (checkoutInput) {
+      checkoutInput.min = target.value;
+    }
+  });
+</script>

@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'es';
+---
+
+<Layout
+  title="Reservas - La Casa del Bosque de Nubes"
+  description="Motor de reservas para La Casa del Bosque de Nubes"
+  lang={lang}
+>
+  <Header lang={lang} />
+
+  <main>
+    <div class="container">
+      <section class="section">
+        <header class="section-header">
+          <h2 class="h2">Motor de reservas (placeholder)</h2>
+          <p class="muted">
+            Integra aquí tu proveedor o tu propio flujo.
+          </p>
+        </header>
+
+        <div class="card">
+          <h3 style="margin: 0 0 var(--space-4) 0;">Próximamente</h3>
+          <p class="muted" style="margin-bottom: var(--space-6);">
+            Estamos trabajando en integrar nuestro sistema de reservas.
+            Mientras tanto, puedes contactarnos directamente para hacer tu reserva.
+          </p>
+
+          <div class="booking-info grid grid-2">
+            <div>
+              <h4 style="margin: 0 0 var(--space-2) 0;">Teléfono</h4>
+              <p class="muted">+51 000 000 000</p>
+            </div>
+            <div>
+              <h4 style="margin: 0 0 var(--space-2) 0;">Email</h4>
+              <p class="muted">info@casanubegocta.com</p>
+            </div>
+            <div>
+              <h4 style="margin: 0 0 var(--space-2) 0;">WhatsApp</h4>
+              <p class="muted">+51 000 000 000</p>
+            </div>
+            <div>
+              <h4 style="margin: 0 0 var(--space-2) 0;">Horario</h4>
+              <p class="muted">Lunes a Domingo, 8AM - 8PM</p>
+            </div>
+          </div>
+
+          <div style="margin-top: var(--space-6);">
+            <a class="btn" href="/contacto">Ir a Contacto</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
+
+<style>
+  .section-header {
+    margin-bottom: var(--space-6);
+  }
+
+  .booking-info {
+    padding: var(--space-4);
+    background: var(--color-bg-soft);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+</style>
