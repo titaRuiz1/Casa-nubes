@@ -2,260 +2,110 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { images } from '../data/images.js';
 
-const lang = 'es';
+const coverImage = images.coverImages.main;
+const ourHouseImages = [images.ourHouse[1], images.ourHouse[2], images.ourHouse[3]];
 ---
 
 <Layout
-  title="Nuestra Casa - Casa del Bosque de Nubes"
+  title="Nuestra Casa - La Casa del Bosque de Nubes"
   description="Descubre nuestra casa tradicional en el corazón de Cocachimba, Amazonas"
-  lang={lang}
 >
-  <Header lang={lang} />
+  <Header />
 
-  <main class="pt-16">
-    <!-- Hero Section -->
-    <section class="hero-page">
-      <div class="hero-bg" style="background-image: url('/images/house-exterior.jpg');"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1 class="hero-title">Nuestra Casa</h1>
-        <p class="hero-subtitle">Arquitectura tradicional en armonía con la naturaleza</p>
-      </div>
-    </section>
-
-    <!-- About Our House -->
-    <section class="py-20 bg-white">
-      <div class="container mx-auto px-4 max-w-5xl">
-        <div class="prose-section">
-          <h2 class="section-title text-center mb-8">Un Refugio en el Bosque de Nubes</h2>
-
-          <p class="text-lg text-gray-700 leading-relaxed mb-6">
-            Casa del Bosque de Nubes es una construcción tradicional que combina la arquitectura
-            característica de la región de Amazonas con las comodidades modernas que nuestros
-            huéspedes necesitan.
-          </p>
-
-          <p class="text-lg text-gray-700 leading-relaxed mb-6">
-            Situada en el pintoresco pueblo de Cocachimba, a solo minutos de la impresionante
-            Catarata de Gocta, nuestra casa ofrece un ambiente acogedor y familiar, perfecto
-            para quienes buscan desconectarse del estrés urbano y reconectarse con la naturaleza.
-          </p>
-
-          <p class="text-lg text-gray-700 leading-relaxed mb-8">
-            Con vistas panorámicas a las montañas y el bosque nuboso circundante, cada rincón
-            de nuestra casa ha sido diseñado pensando en la comodidad y el bienestar de nuestros
-            visitantes.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Grid -->
-    <section class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4 max-w-7xl">
-        <h2 class="section-title text-center mb-12">Características de Nuestra Casa</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="feature-card-large">
-            <div class="feature-card-icon">🏗️</div>
-            <h3 class="feature-card-title">Arquitectura Tradicional</h3>
-            <p class="feature-card-text">
-              Construcción inspirada en las técnicas ancestrales de la región,
-              utilizando materiales locales y sostenibles.
-            </p>
-          </div>
-
-          <div class="feature-card-large">
-            <div class="feature-card-icon">🌄</div>
-            <h3 class="feature-card-title">Vistas Panorámicas</h3>
-            <p class="feature-card-text">
-              Disfruta de vistas espectaculares a las montañas y al bosque nuboso
-              desde diferentes puntos de la casa.
-            </p>
-          </div>
-
-          <div class="feature-card-large">
-            <div class="feature-card-icon">🌺</div>
-            <h3 class="feature-card-title">Jardines Naturales</h3>
-            <p class="feature-card-text">
-              Amplios espacios verdes con plantas nativas que atraen aves y
-              mariposas locales.
-            </p>
-          </div>
-
-          <div class="feature-card-large">
-            <div class="feature-card-icon">🔥</div>
-            <h3 class="feature-card-title">Espacios Comunes</h3>
-            <p class="feature-card-text">
-              Sala con chimenea, comedor amplio y terrazas perfectas para
-              compartir momentos únicos.
-            </p>
-          </div>
-
-          <div class="feature-card-large">
-            <div class="feature-card-icon">🍳</div>
-            <h3 class="feature-card-title">Cocina Equipada</h3>
-            <p class="feature-card-text">
-              Cocina completa con todos los utensilios necesarios para preparar
-              deliciosas comidas caseras.
-            </p>
-          </div>
-
-          <div class="feature-card-large">
-            <div class="feature-card-icon">🔭</div>
-            <h3 class="feature-card-title">Observatorio</h3>
-            <p class="feature-card-text">
-              Espacio especial para observar las estrellas en las noches despejadas
-              del bosque nuboso.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- History Section -->
-    <section class="py-20 bg-white">
-      <div class="container mx-auto px-4 max-w-5xl">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  <main>
+    <!-- Cover Section -->
+    <div id="nuestra-casa-cover" class="relative">
+      <div 
+        class="relative bg-cover bg-center bg-no-repeat w-full flex items-center justify-center h-[50vh] min-h-[50vh] md:h-[60vh] md:min-h-[60vh]" 
+        style={`background-image: url('${coverImage}');`}
+      >
+        <div class="absolute inset-0 bg-black/30 z-10 w-full h-full"></div>
+        
+        <!-- Contenedores para título y subtítulo (vacíos según el HTML de referencia) -->
+        <div class="relative z-20 text-center text-white pointer-events-none">
           <div>
-            <img
-              src="/images/house-history.jpg"
-              alt="Historia de la casa"
-              class="rounded-lg shadow-xl w-full object-cover"
-              style="height: 400px;"
-            />
+            <h1 class="text-white m-0 inline-block text-[35px]" id="cover-title-nuestra-casa"></h1>
           </div>
           <div>
-            <h2 class="section-title text-left mb-6">Nuestra Historia</h2>
-            <p class="text-lg text-gray-700 leading-relaxed mb-4">
-              Fundada por una familia local apasionada por compartir la belleza
-              de Cocachimba con el mundo, Casa del Bosque de Nubes nació del
-              deseo de crear un espacio donde los viajeros pudieran experimentar
-              la auténtica vida en los Andes amazónicos.
-            </p>
-            <p class="text-lg text-gray-700 leading-relaxed mb-4">
-              Hemos preservado las tradiciones constructivas de nuestros ancestros
-              mientras incorporamos las comodidades que hacen de tu estadía una
-              experiencia inolvidable.
-            </p>
-            <p class="text-lg text-gray-700 leading-relaxed">
-              Cada detalle de nuestra casa cuenta una historia de respeto por
-              la naturaleza y la cultura local.
-            </p>
+            <h3 class="text-white m-0 inline-block text-lg" id="cover-subtitle-nuestra-casa"></h3>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    
+    <!-- Text Block with Multiple Images Section -->
+    <div id="block_1412185" class="py-10 md:py-16 lg:py-20 bg-[#f5f1e8]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:gap-8 items-start">
+          <!-- Left Side: Images Grid -->
+          <div class="w-full lg:w-5/12 flex-shrink-0 p-0">
+            <div class="grid grid-cols-2 gap-3 md:gap-4" style="grid-template-rows: 1fr 1fr; align-items: stretch;">
+              <!-- First image - takes left column and full height (spans 2 rows) -->
+              <div class="relative" style="grid-column: 1; grid-row: 1 / span 2; display: flex;">
+                <img 
+                  src={ourHouseImages[0]} 
+                  alt="Casa del Bosque de Nubes 1"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <!-- Second image - top right -->
+              <div class="relative" style="grid-column: 2; grid-row: 1; display: flex;">
+                <img 
+                  src={ourHouseImages[1]} 
+                  alt="Casa del Bosque de Nubes 2"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <!-- Third image - bottom right -->
+              <div class="relative" style="grid-column: 2; grid-row: 2; display: flex;">
+                <img 
+                  src={ourHouseImages[2]} 
+                  alt="Casa del Bosque de Nubes 3"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: Text Content -->
+          <div class="w-full lg:w-5/12 flex-shrink-0 mt-6 lg:mt-0">
+            <div class="text_block_with_multiple_images--text">
+              <h2 class="j-block-title style_title pb-2 text-3xl md:text-4xl font-bold text-gray-900">
+                La Casa
+              </h2>
+
+              <!-- Separator (hidden) -->
+              <div class="j-block-separator style_separator hidden">
+                <hr class="hidden" />
+                <div class="style_icon_separator j-block-icon-separator">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" enable-background="new 0 0 357 357" version="1.1" viewBox="0 0 357 357" xml:space="preserve">
+                    <g><g><path fill="#006DF0" d="M357,204H0v-51h357V204z"></path></g></g>
+                  </svg>
+                </div>
+                <hr class="hidden" />
+              </div>
+
+              <div class="j-block-text style_text text-[14px] text-[#2e2925] text-center font-normal font-[Nunito] leading-relaxed mt-4">
+                Un refugio inspirado en las construcciones circulares Chachapoya y coronado con la sostenibilidad y versatilidad del bambú.<br/>Situada en lo alto de una montaña, ofrece vistas panorámicas al Valle de las Cataratas y a nuestra imponente y querida Gocta. <br/><br/>La casa se distribuye en dos áreas:<br/>La zona de descanso y el área social.<br/><strong>La zona de descanso</strong>  está compuesta por dos amplias habitaciones, cada una con zona de trabajo, armario y baño propio.<br/><strong>La habitación "Pirka"</strong>  cuenta con una cama Queen (y de manera complementaria con un cama baja de 1 plaza, extraible de ser necesario), terraza y panorámicas a la catarata.<br/><strong>La habitación Gatmalap</strong>  cuenta con una cama Queen, jardín e impresionantes panorámicas al valle.<br/><br/>El área social cuenta con salón, cocina, comedor y terraza.<br/>La cocina está totalmente equipada, el salón cuenta con zona de estar con estufa a leña y vistas directas a la catarata y salida a la terraza principal. (parrilla portátil bajo solicitud sin costo extra)<br/><br/>La casa está rodeada de un frondoso jardín de orquídeas, plantas locales y árboles nativos, que alberga orgulloso colibríes, mariposas, y muchos más huéspedes de la naturaleza.<br/><br/>Cuando el cielo lo permite, la zona de fogata es ideal para acompañar con fuego el espectáculo de las estrellas.<br/><br/><strong>Advertencias y recomendaciones:</strong> <br/>Nuestra casa está en el medio de la naturaleza, por lo tanto pueden presentarse intermitencias eléctricas, además de algunas posibles aventuras rústicas como incursiones esporádicas de la fauna local (no olvidar que nosotros somos los visitantes), todo, parte del encanto del lugar.<br/><br/><strong><u>La llegada incluye una subida a pie de 5 minutos</u></strong>  (te ayudaremos con el equipaje).
+              </div>
+
+              <!-- Button (hidden) -->
+              <div class="style_button-alignment mt-4">
+                <a class="booking_window_trigger j-button-text j-block-button style_button mt-2 hidden" target="" href="/es/booking/room">Descubrir</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Aquí irán las demás secciones que desarrolles después -->
   </main>
 
-  <Footer lang={lang} />
+  <Footer />
 </Layout>
-
-<style>
-  .hero-page {
-    position: relative;
-    height: 60vh;
-    min-height: 400px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(46, 41, 37, 0.5) 0%,
-      rgba(46, 41, 37, 0.7) 100%
-    );
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    color: white;
-    max-width: 800px;
-    padding: 0 2rem;
-  }
-
-  .hero-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .hero-subtitle {
-    font-size: clamp(1.125rem, 2vw, 1.375rem);
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  .prose-section {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .feature-card-large {
-    background: white;
-    padding: 2.5rem 2rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-  }
-
-  .feature-card-large:hover {
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    transform: translateY(-6px);
-    border-color: var(--color-accent);
-  }
-
-  .feature-card-icon {
-    font-size: 4rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .feature-card-title {
-    font-size: 1.375rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-  }
-
-  .feature-card-text {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--color-light-text);
-  }
-
-  @media (max-width: 768px) {
-    .hero-page {
-      height: 50vh;
-      min-height: 350px;
-    }
-
-    .feature-card-large {
-      padding: 2rem 1.5rem;
-    }
-
-    .feature-card-icon {
-      font-size: 3rem;
-    }
-  }
-</style>
