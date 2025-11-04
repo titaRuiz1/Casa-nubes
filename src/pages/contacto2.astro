@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Form } from './contacto2';
+
+const lang = 'es';
+---
+
+<Layout
+  title="Contacto 2 - Casa del Bosque de Nubes"
+  description="Formulario de contacto"
+  lang={lang}
+>
+  <Header lang={lang} />
+
+  <main class="pt-16 py-20 bg-section-primary">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <Form client:load />
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
+

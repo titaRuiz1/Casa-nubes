@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import clsx from 'clsx';
 
 export default function Gallery({ images }) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
