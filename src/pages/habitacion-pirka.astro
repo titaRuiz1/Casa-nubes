@@ -1,0 +1,395 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { images } from "../data/images.js";
+
+const coverImage = images.rooms.pirka.portada;
+const textImage = images.rooms.pirka.portada;
+const carouselImages = [
+  images.rooms.pirka[1],
+  images.rooms.pirka[2],
+  images.rooms.pirka[3],
+  images.rooms.pirka[4],
+  images.rooms.pirka[5],
+  images.rooms.pirka[6],
+];
+---
+
+<Layout
+  title="Habitación Pirka - La Casa del Bosque de Nubes"
+  description="La habitación Pirka mira hacia el imponente valle de las cataratas"
+>
+  <Header />
+
+  <main>
+    <!-- Cover Section -->
+    <div id="gatmalap-cover" class="relative">
+      <div
+        class="relative bg-cover bg-center bg-no-repeat w-full flex items-center justify-center h-[50vh] min-h-[50vh] md:h-[60vh] md:min-h-[60vh]"
+        style={`background-image: url('${coverImage}');`}
+      >
+        <div class="absolute inset-0 bg-gray-700/70 z-10 w-full h-full"></div>
+
+        <div class="relative z-20 text-center text-white pointer-events-none">
+          <div>
+            <h1
+              class="text-white m-0 inline-block text-[35px]"
+              id="cover-title-gatmalap"
+            >
+              Habitación Pirka
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text Block with Image Section -->
+    <section
+      id="block_text_image"
+      class="py-4 md:py-6 lg:py-6 bg-section-beige"
+    >
+      <div class="container-custom mx-auto">
+        <div
+          class="flex flex-col lg:flex-row items-stretch justify-center"
+        >
+          <!-- Left Side: Single Image -->
+          <div class="w-full lg:w-1/2 flex-shrink-0 p-0 flex">
+            <div class="single-image-wrapper">
+              <img
+                src={textImage}
+                alt="Habitación Gatmalap"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Right Side: Text Content -->
+          <div
+            class="w-full flex items-center"
+          >
+            <div
+              class="text-sm text-[#2e2925] font-normal leading-relaxed mt-4 px-10 pt-4"
+            >
+              <h4 class="text-center">
+                La habitación Pirka ofrece vistas privilegiadas a la catarata de Gocta y acceso a una terraza con área verde. Equipada con una cama queen y una cama individual retráctil, ropero y un área de trabajo.  
+              </h4>
+              <br />
+              <h4 class="text-center">
+                La habitación tiene acceso casi directo a la sala de baño principal, la que cuenta con una amplia ducha y vistas al valle.
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section
+      id="carousel-section"
+      class="py-10 md:py-10 lg:py-10 bg-section-beige"
+    >
+      <div class="carousel-outer-container">
+        <div class="carousel-container">
+          <button
+            class="carousel-btn carousel-btn-prev"
+            id="prevBtn"
+            aria-label="Previous"
+          >
+            <svg viewBox="0 0 100 100" width="40" height="40">
+              <path
+                d="M 10,50 L 60,100 L 70,90 L 30,50 L 70,10 L 60,0 Z"
+                fill="white"></path>
+            </svg>
+          </button>
+
+          <div class="carousel-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+              {
+                carouselImages.map((image, index) => (
+                  <div class="carousel-slide" data-index={index}>
+                    <img
+                      src={image}
+                      alt={`Habitación Gatmalap ${index + 1}`}
+                      class="carousel-image"
+                      loading="lazy"
+                    />
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+          <button
+            class="carousel-btn carousel-btn-next"
+            id="nextBtn"
+            aria-label="Next"
+          >
+            <svg viewBox="0 0 100 100" width="40" height="40">
+              <path
+                d="M 10,50 L 60,100 L 70,90 L 30,50 L 70,10 L 60,0 Z"
+                transform="translate(100, 100) rotate(180)"
+                fill="white"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .container-custom {
+    max-width: 1500px;
+  }
+
+  .single-image-wrapper {
+    width: 100%;
+    min-height: 400px;
+    overflow: hidden;
+  }
+
+  .single-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Responsive: adjust image height in mobile */
+  @media (max-width: 700px) {
+    .single-image-wrapper {
+      min-height: 300px;
+    }
+
+    #block_text_image .flex {
+      flex-direction: column;
+    }
+  }
+
+  /* Carousel Styles */
+  .carousel-outer-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .carousel-wrapper {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 300px;
+  }
+
+  .carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .carousel-btn {
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+  }
+
+  .carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .carousel-btn-prev,
+  .carousel-btn-next {
+    position: static;
+  }
+
+  /* Desktop: Show multiple slides */
+  @media (min-width: 701px) {
+    .carousel-slide {
+      width: calc(25% - 0.75rem);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .carousel-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .carousel-slide {
+      width: 100%;
+      height: 250px;
+    }
+
+    .carousel-btn {
+      width: 45px;
+      height: 45px;
+    }
+
+    .carousel-btn svg {
+      width: 35px;
+      height: 35px;
+    }
+
+    /* Show navigation buttons horizontally below carousel */
+    .carousel-container {
+      position: relative;
+    }
+
+    .carousel-btn-prev,
+    .carousel-btn-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .carousel-btn-prev {
+      left: 10px;
+    }
+
+    .carousel-btn-next {
+      right: 10px;
+    }
+  }
+</style>
+
+<script>
+  const track = document.getElementById("carouselTrack");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const slides = document.querySelectorAll(".carousel-slide");
+
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+
+  // Determine slides per view based on screen size
+  function getSlidesPerView() {
+    return window.innerWidth > 770 ? 4 : 4;
+  }
+
+  function updateCarousel() {
+    const slidesPerView = getSlidesPerView();
+    const slideWidth = (slides[0] as HTMLElement)?.offsetWidth || 0;
+    const gap = 16; // 1rem gap
+    const offset = -currentIndex * (slideWidth + gap);
+
+    if (track) {
+      track.style.transform = `translateX(${offset}px)`;
+    }
+  }
+
+  function nextSlide() {
+    const slidesPerView = getSlidesPerView();
+    const maxIndex = totalSlides - slidesPerView;
+
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    const slidesPerView = getSlidesPerView();
+    const maxIndex = totalSlides - slidesPerView;
+
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = maxIndex;
+    }
+    updateCarousel();
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", nextSlide);
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", prevSlide);
+  }
+
+  // Update carousel on window resize
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      currentIndex = 0;
+      updateCarousel();
+    }, 250);
+  });
+
+  // Auto-play carousel
+  let autoplayInterval = setInterval(nextSlide, 5000);
+
+  // Pause autoplay on hover
+  const carouselContainer = document.querySelector(".carousel-container");
+  if (carouselContainer) {
+    carouselContainer.addEventListener("mouseenter", () => {
+      clearInterval(autoplayInterval);
+    });
+
+    carouselContainer.addEventListener("mouseleave", () => {
+      autoplayInterval = setInterval(nextSlide, 5000);
+    });
+  }
+
+  // Touch support for mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (track) {
+    track.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    track.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+  }
+
+  function handleSwipe() {
+    if (touchEndX < touchStartX - 50) {
+      nextSlide();
+    }
+    if (touchEndX > touchStartX + 50) {
+      prevSlide();
+    }
+  }
+
+  // Initial setup
+  updateCarousel();
+</script>

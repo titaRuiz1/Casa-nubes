@@ -189,6 +189,16 @@ p {
   text-align: center;
 }
 
+h1{
+  font-family: Cinzel;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: normal;
+    color: #ffffff;
+    text-transform: none;
+    text-align: center;
+}
+
 h2 {
   font-family: Nunito;
   font-size: 35px;
@@ -208,6 +218,15 @@ h3 {
   text-transform: none;
 }
 
+h4 {
+  font-family: Nunito;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: normal;
+    color: #2e2925;
+    text-transform: none;
+    text-align: center;
+}
 /* Mejoras de tipografía */
 h1,
 h3,
