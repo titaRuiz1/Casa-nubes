@@ -11,12 +11,17 @@
   --color-border: #1f2a2a;
 
   /* Section backgrounds - Paleta tierra/natural */
-  --color-section-olive: #6c6534;      /* Verde oliva oscuro */
-  --color-section-dark: #1b1202;       /* Marrón muy oscuro */
-  --color-section-brown: #2f210c;      /* Marrón verdoso */
-  --color-section-beige: #d2b894;      /* Beige/crema */
-  --color-section-charcoal: #312e17;   /* Gris carbón */
-
+  --color-section-olive: #6c6534;
+  /* Verde oliva oscuro */
+  --color-section-dark: #1b1202;
+  /* Marrón muy oscuro */
+  --color-section-brown: #2f210c;
+  /* Marrón verdoso */
+  --color-section-beige: #d2b894;
+  /* Beige/crema */
+  --color-section-charcoal: #312e17;
+  /* Gris carbón */
+  --color-section-white: #f5f5f5;
   --color-background-yellow: #d4b827;
   --radius-lg: 16px;
   --radius-md: 12px;
@@ -32,7 +37,7 @@
   --space-10: 40px;
   --container: 1200px;
 
-  --shadow-soft: 0 10px 30px rgba(0,0,0,.2);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, .2);
 
   --transition-default: all 0.3s ease-in-out;
 }
@@ -89,6 +94,7 @@ img {
 }
 
 @media (max-width: 900px) {
+
   .grid-2,
   .grid-3 {
     grid-template-columns: 1fr;
@@ -154,11 +160,6 @@ img {
   margin: 0 0 var(--space-3) 0;
 }
 
-.h2 {
-  font-size: clamp(22px, 3vw, 32px);
-  margin: 0 0 var(--space-2) 0;
-}
-
 .section-title {
   font-size: clamp(22px, 3vw, 32px);
   margin: 0 0 var(--space-2) 0;
@@ -178,21 +179,47 @@ img {
   margin: var(--space-10) 0;
 }
 
+p {
+  font-family: Nunito;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  color: #2e2925;
+  text-transform: none;
+  text-align: center;
+}
+
+h2 {
+  font-family: Nunito;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  color: #2e2925;
+  text-transform: none;
+  text-align: center;
+}
+
+h3 {
+  font-family: Nunito;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  color: #2e2925;
+  text-transform: none;
+}
+
 /* Mejoras de tipografía */
 h1,
-h2,
 h3,
 h4,
 h5,
 h6 {
   font-weight: 600;
   line-height: 1.2;
-  color: var(--color-fg);
 }
 
 p {
   line-height: 1.8;
-  color: var(--color-fg);
 }
 
 a {
@@ -239,6 +266,10 @@ a {
 
 .bg-background-yellow {
   background-color: var(--color-background-yellow);
+}
+
+.bg-section-white {
+  background-color: var(--color-section-white);
 }
 
 /* Gallery custom colors */
