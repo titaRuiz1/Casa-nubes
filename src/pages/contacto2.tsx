@@ -4,6 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export function Form({ id }: { id: string }) {
 
@@ -44,14 +45,23 @@ export function Form({ id }: { id: string }) {
             <div className="flex-1 h-px bg-[#6c6534] max-w-[120px]" />
           </div>
 
-          <h3 className="text-2xl font-semibold mb-3 text-[#312e17]">
+          {/* <h3 className="text-2xl font-semibold mb-3 text-[#312e17]">
             La Casa del Bosque de Nubes
-          </h3>
-          <p className="text-base leading-relaxed text-[#6c6534]">
-            reservas@casanubegocta.com<br />
-            Camino a Gocta, Cocachimba, Amazonas, 01100, Perú<br />
-            +51 942 242 232
-          </p>
+          </h3> */}
+          <div className="text-base leading-relaxed text-[#312e17] space-y-2">
+            <div className="flex items-center justify-center gap-3">
+              <Mail className="w-4 h-4" />
+              <p>reservas@casanubegocta.com</p>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <MapPin className="w-4 h-4" />
+              <p>Camino a Gocta, Cocachimba, Amazonas, 01100, Perú</p>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <Phone className="w-4 h-4" />
+              <p>+51 942 242 232</p>
+            </div>
+          </div>
         </div>
 
         {/* Form */}
