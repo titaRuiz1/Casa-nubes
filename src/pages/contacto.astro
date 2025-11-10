@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Contact from '../components/sections/Contact.astro';
+import { Form } from './contacto2';
 
 const lang = 'es';
 ---
@@ -10,225 +10,80 @@ const lang = 'es';
 <Layout
   title="Contacto - Casa del Bosque de Nubes"
   description="Contáctanos para reservar tu estadía en Casa del Bosque de Nubes, Gocta"
-  lang={lang}
 >
-  <Header lang={lang} />
+  <Header/>
 
-  <main class="pt-16">
+  <main>
     <!-- Hero Section -->
     <section class="hero-page">
-      <div class="hero-bg" style="background-image: url('/images/contact-hero.jpg');"></div>
-      <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1 class="hero-title">Contáctanos</h1>
-        <p class="hero-subtitle">Estamos aquí para ayudarte a planificar tu visita</p>
+        <p class="hero-subtitle">Hemos creado este espacio dedicado a facilitar la comunicación directa con nuestros usuarios. Ya sea que tengas preguntas, comentarios o inquietudes, nos encantaría escucharte. Utiliza el formulario de contacto para enviarnos un mensaje, y te responderemos en el menor tiempo posible. </p>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <Contact lang={lang} />
-
-    <!-- Map Section -->
-    <section class="py-20 bg-white">
-      <div class="container mx-auto px-4 max-w-7xl">
-        <h2 class="section-title text-center mb-12">Nuestra Ubicación</h2>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <!-- Map -->
-          <div class="map-wrapper">
-            <div class="map-placeholder">
-              <div class="map-icon">📍</div>
-              <p class="map-text">Mapa interactivo</p>
-              <p class="map-subtext">Cocachimba, Bongará, Amazonas</p>
-            </div>
-          </div>
-
-          <!-- How to Get Here -->
-          <div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-6">¿Cómo llegar?</h3>
-
-            <div class="space-y-6">
-              <div class="direction-step">
-                <div class="step-number">1</div>
-                <div>
-                  <h4 class="step-title">Desde Chachapoyas</h4>
-                  <p class="step-text">
-                    Toma un bus o colectivo hacia Cocachimba. El viaje dura
-                    aproximadamente 1 hora y 30 minutos.
-                  </p>
-                </div>
-              </div>
-
-              <div class="direction-step">
-                <div class="step-number">2</div>
-                <div>
-                  <h4 class="step-title">Al llegar a Cocachimba</h4>
-                  <p class="step-text">
-                    Nuestra casa está ubicada en el centro del pueblo, cerca
-                    del punto de inicio del camino a la Catarata Gocta.
-                  </p>
-                </div>
-              </div>
-
-              <div class="direction-step">
-                <div class="step-number">3</div>
-                <div>
-                  <h4 class="step-title">Necesitas ayuda?</h4>
-                  <p class="step-text">
-                    Llámanos o escríbenos por WhatsApp y con gusto te ayudaremos
-                    a coordinar tu llegada.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-8 p-6 bg-gray-50 rounded-lg">
-              <h4 class="font-bold text-gray-900 mb-3">Información adicional</h4>
-              <ul class="space-y-2 text-gray-700">
-                <li>• Coordenadas GPS: -5.9117, -77.8856</li>
-                <li>• Altitud: 1,850 msnm</li>
-                <li>• Clima: Templado (15-25°C)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Contact Form Section -->
+    <Form client:load id="contacto" />
   </main>
 
   <Footer lang={lang} />
 </Layout>
 
+<style is:global>
+  /* Override header styles for contact page */
+  .site-header {
+    position: static !important;
+    background: #2f210c !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .site-title {
+    color: #f5ebe0 !important;
+    text-shadow: none !important;
+  }
+
+  .menu a {
+    color: #f5ebe0 !important;
+    text-shadow: none !important;
+  }
+
+  .menu a::after {
+    background: #d4b827 !important;
+  }
+</style>
+
 <style>
   .hero-page {
     position: relative;
-    height: 50vh;
-    min-height: 350px;
+    min-height: 280px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(46, 41, 37, 0.5) 0%,
-      rgba(46, 41, 37, 0.7) 100%
-    );
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #f5ebe0 0%, #ede6cc 50%, #dbdbb8 100%);
   }
 
   .hero-content {
     position: relative;
-    z-index: 10;
     text-align: center;
-    color: white;
-    max-width: 800px;
-    padding: 0 2rem;
-  }
-
-  .hero-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    padding: 0 1.5rem;
   }
 
   .hero-subtitle {
-    font-size: clamp(1.125rem, 2vw, 1.375rem);
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  .map-wrapper {
-    border-radius: 0.75rem;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  }
-
-  .map-placeholder {
-    width: 100%;
-    height: 450px;
-    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .map-icon {
-    font-size: 5rem;
-    opacity: 0.5;
-  }
-
-  .map-text {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-primary);
-  }
-
-  .map-subtext {
-    color: var(--color-light-text);
-  }
-
-  .direction-step {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-  }
-
-  .step-number {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background: var(--color-accent);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  .step-title {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-  }
-
-  .step-text {
-    color: var(--color-light-text);
-    line-height: 1.7;
+    font-family: Nunito, sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: #312e17;
+    letter-spacing: 0.03em;
+    line-height: 1.9;
+    font-weight: 400;
+    margin: 0;
   }
 
   @media (max-width: 768px) {
-    .map-placeholder {
-      height: 300px;
-    }
-
-    .direction-step {
-      gap: 1rem;
-    }
-
-    .step-number {
-      width: 2.5rem;
-      height: 2.5rem;
-      font-size: 1rem;
+    .hero-page {
+      min-height: 240px;
+      padding: 3rem 1rem;
     }
   }
 </style>

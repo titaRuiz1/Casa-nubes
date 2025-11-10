@@ -44,24 +44,28 @@ export const images = {
 
   // Galería
   gallery: {
-    1: 'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/3e3d5f44-0558-45f3-ade8-f26ccf5699f6.jpg',
-    2: 'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/Cambio+2.JPEG',
-    3: 'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/Cambio+3.JPEG',
-    4: 'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/Cambio+4.JPEG',
-    5: 'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/Cambio+6.JPEG',
-    6: 'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_9984+(1).jpg',
-    7: 'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_3219+-+copia.JPEG',
-    8: 'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_6971.JPEG',
-    9: 'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_7193+-+copia.JPEG',
+    0:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_9525.JPEG',
+    1:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_7273.JPEG',
+    2:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/3e3d5f44-0558-45f3-ade8-f26ccf5699f6.jpg',
+    3:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_7333+(1).JPEG',
+    4:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/Cambio+4.JPEG',
+    5:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_3179.JPEG', 
+    
+    6:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_9312+-+copia.JPEG',
+    7:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_7241.JPEG',
+    8:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_7402.JPEG',
+    9:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_6971.JPEG',
     10:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_7214.JPEG',
-    11:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_7241.JPEG',
-    12:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_7273.JPEG',
-    13:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_7333+(1).JPEG',
-    14:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_7402.JPEG',
-    15:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_9312+-+copia.JPEG',
-    16:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_9525.JPEG',
-    17:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_9540.JPEG',
-    18:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_3179.JPEG',
+    11:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_9984+(1).jpg',
+    12:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/opcion+de+reemplazo/3c5726b5-a1a6-4c84-8970-81cf4c00cc4d.JPG',
+
+    13:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/Cambio+6.JPEG',
+    14:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_7193+-+copia.JPEG',
+    15:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_3219+-+copia.JPEG',
+    16:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/Cambio+3.JPEG',
+    17:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/Cambio+2.JPEG',
+    18:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/IMG_9540.JPEG',
+    19:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/opcion+de+reemplazo/Cambio+3.HEIC',
     
   },
 
@@ -79,6 +83,9 @@ export const images = {
    desayunos:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Servicios+adiccionales-20251022T020326Z-1-001/Servicios+adiccionales/Desayunos.JPEG',
   excursiones:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Servicios+adiccionales-20251022T020326Z-1-001/Servicios+adiccionales/Excursiones.JPEG',
   },
+
+  contact: 'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Galeria-20251022T015627Z-1-001/Galeria/opcion+de+reemplazo/IMG_3848.jpg',
+
 };
 
 // Función helper para obtener URL de imagen

@@ -94,8 +94,8 @@ export default function Gallery({ images }) {
       <div className='container mx-auto px-4 max-w-7xl'>
         {/* Header */}
         <div className='text-center mb-6'>
-          <h2 className='text-4xl md:text-5xl font-bold'>
-            Galería
+          <h2  className='text-4xl md:text-5xl font-bold font-Cinzel gallery-title'>
+            GALERÍA
           </h2>
         </div>
 
@@ -125,20 +125,20 @@ export default function Gallery({ images }) {
           {/* Close Button */}
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+            className="absolute top-4 right-4 bg-white hover:bg-gray-200 text-black rounded transition-colors z-10 p-2"
             aria-label="Cerrar galería"
           >
             <svg
-              className="w-10 h-10"
+              className="w-4 h-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              strokeWidth="3"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
+                d="M9 15L3 21m0 0h6m-6 0v-6m12-6l6-6m0 0v6m0-6h-6"
               />
             </svg>
           </button>

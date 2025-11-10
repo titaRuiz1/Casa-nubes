@@ -37,7 +37,7 @@ const ourHouseImages = [images.ourHouse[1], images.ourHouse[2], images.ourHouse[
     
     <!-- Text Block with Multiple Images Section -->
     <section id="block_1412185" class="py-10 md:py-16 lg:py-20 bg-section-beige">
-      <div class="container-custom mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="container-custom mx-auto lg:px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row lg:gap-16 items-stretch justify-center">
           <!-- Left Side: Images Grid -->
           <div class="w-full lg:w-5/12 flex-shrink-0 p-0 flex">
@@ -75,7 +75,7 @@ const ourHouseImages = [images.ourHouse[1], images.ourHouse[2], images.ourHouse[
           <!-- Right Side: Text Content -->
           <div class="w-full lg:w-5/12 flex-shrink-0 mt-6 lg:mt-0 self-start">
             <div class="text_block_with_multiple_images--text text-center">
-              <h2 class="j-block-title style_title pb-2 text-2xl md:text-3xl font-bold text-gray-900 mt-0">
+              <h2 class="j-block-title style_title pb-2 text-2xl md:text-3xl mt-0" style="font-family: Cinzel; font-weight: 400;">
                 La Casa
               </h2>
 
@@ -90,9 +90,9 @@ const ourHouseImages = [images.ourHouse[1], images.ourHouse[2], images.ourHouse[
                 <hr class="hidden" />
               </div>
 
-              <div class="j-block-text style_text text-sm text-[#2e2925] font-normal leading-relaxed mt-4">
+              <p class="j-block-text style_text text-sm text-[#2e2925] font-normal mt-4 px-4">
                 Un refugio inspirado en las construcciones circulares Chachapoya y coronado con la sostenibilidad y versatilidad del bambú.<br/>Situada en lo alto de una montaña, ofrece vistas panorámicas al Valle de las Cataratas y a nuestra imponente y querida Gocta. <br/><br/>La casa se distribuye en dos áreas:<br/>La zona de descanso y el área social.<br/><strong>La zona de descanso</strong>  está compuesta por dos amplias habitaciones, cada una con zona de trabajo, armario y baño propio.<br/><strong>La habitación "Pirka"</strong>  cuenta con una cama Queen (y de manera complementaria con un cama baja de 1 plaza, extraible de ser necesario), terraza y panorámicas a la catarata.<br/><strong>La habitación Gatmalap</strong>  cuenta con una cama Queen, jardín e impresionantes panorámicas al valle.<br/><br/>El área social cuenta con salón, cocina, comedor y terraza.<br/>La cocina está totalmente equipada, el salón cuenta con zona de estar con estufa a leña y vistas directas a la catarata y salida a la terraza principal. (parrilla portátil bajo solicitud sin costo extra)<br/><br/>La casa está rodeada de un frondoso jardín de orquídeas, plantas locales y árboles nativos, que alberga orgulloso colibríes, mariposas, y muchos más huéspedes de la naturaleza.<br/><br/>Cuando el cielo lo permite, la zona de fogata es ideal para acompañar con fuego el espectáculo de las estrellas.<br/><br/><strong>Advertencias y recomendaciones:</strong> <br/>Nuestra casa está en el medio de la naturaleza, por lo tanto pueden presentarse intermitencias eléctricas, además de algunas posibles aventuras rústicas como incursiones esporádicas de la fauna local (no olvidar que nosotros somos los visitantes), todo, parte del encanto del lugar.<br/><br/><strong><u>La llegada incluye una subida a pie de 5 minutos</u></strong>  (te ayudaremos con el equipaje).
-              </div>
+              </p>
 
               <!-- Button (hidden) -->
               <div class="style_button-alignment mt-4">
@@ -110,28 +110,28 @@ const ourHouseImages = [images.ourHouse[1], images.ourHouse[2], images.ourHouse[
       </div>
       <div class="services-additional-grid">
         <div class="service-additional-item">
-          <div class="h-[240px] w-full overflow-hidden rounded-sm mb-4">
+          <div class="service-additional-image">
             <img src={images.additionalImages.desayunos} alt="Desayunos" class="w-full h-full object-cover" />
           </div>
-          <h3 class="text-sm font-bold text-black text-center">Desayunos</h3>
+          <h3 class="text-base font-semibold text-black text-center mt-4">Desayunos</h3>
         </div>
         <div class="service-additional-item">
-          <div class="h-[240px] w-full overflow-hidden rounded-sm mb-4">
+          <div class="service-additional-image">
             <img src={images.additionalImages.almuerzos} alt="Almuerzos" class="w-full h-full object-cover" />
           </div>
-          <h3 class="text-sm font-bold text-black text-center">Almuerzos</h3>
+          <h3 class="text-base font-semibold text-black text-center mt-4">Almuerzos</h3>
         </div>
         <div class="service-additional-item">
-          <div class="h-[240px] w-full overflow-hidden rounded-sm mb-4">
+          <div class="service-additional-image">
             <img src={images.additionalImages.excursiones} alt="Excursiones" class="w-full h-full object-cover" />
           </div>
-          <h3 class="text-sm font-bold text-black text-center">Excursiones</h3>
+          <h3 class="text-base font-semibold text-black text-center mt-4">Excursiones</h3>
         </div>
         <div class="service-additional-item">
-          <div class="h-[240px] w-full overflow-hidden rounded-sm mb-4">
+          <div class="service-additional-image">
             <img src={images.additionalImages.compras} alt="Compras" class="w-full h-full object-cover" />
           </div>
-          <h3 class="text-sm font-bold text-black text-center">Compras</h3>
+          <h3 class="text-base font-semibold text-black text-center mt-4">Compras</h3>
         </div>
       </div>
     </section>
@@ -218,8 +218,9 @@ const ourHouseImages = [images.ourHouse[1], images.ourHouse[2], images.ourHouse[
   .services-additional-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin: 0 1.25rem;
+    gap: 1.5rem;
+    margin: 0 auto;
+    padding: 0 0.5rem;
   }
 
   .service-additional-item {
@@ -227,16 +228,38 @@ const ourHouseImages = [images.ourHouse[1], images.ourHouse[2], images.ourHouse[
     flex-direction: column;
   }
 
+  .service-additional-image {
+    width: 100%;
+    max-height: 350px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-additional-image:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .service-additional-image img {
+    transition: transform 0.3s ease;
+  }
+
+  .service-additional-image:hover img {
+    transform: scale(1.05);
+  }
+
   /* Responsive: 2x2 grid en 770px o menos */
   @media (max-width: 770px) {
     .services-additional-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
-      margin: 0;
+      padding: 0 1rem;
     }
 
-    .service-additional-item .h-\[240px\] {
-      height: 120px;
+    .service-additional-image {
+      height: 160px;
     }
   }
 </style>

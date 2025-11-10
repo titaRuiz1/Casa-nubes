@@ -16,6 +16,7 @@
   /* Section backgrounds - Paleta tierra/natural */
   --color-section-olive: #6c6534;
   /* Verde oliva oscuro */
+  --color-section-olive-light: #dbdbb8;
   --color-section-dark: #1b1202;
   /* Marrón muy oscuro */
   --color-section-brown: #2f210c;
@@ -135,6 +136,10 @@ img {
   max-width: var(--container);
   margin: 0 auto;
   padding: var(--space-6) var(--space-4) var(--space-10);
+
+  @media (max-width: 512px) {
+    padding: var(--space-6) 0;
+  }
 }
 
 .grid {
@@ -280,7 +285,7 @@ h2 {
   font-family: Nunito;
   font-size: 35px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: normal;
   color: #2e2925;
   text-transform: none;
   text-align: center;
@@ -307,7 +312,6 @@ h4 {
 /* Mejoras de tipografía */
 h1,
 h3,
-h4,
 h5,
 h6 {
   font-weight: 600;
@@ -374,7 +378,13 @@ a {
 }
 
 .gallery-title {
-  color: var(--color-accent);
+  color: var(--color-section-white);
+  font-family: 'Cinzel', serif;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: none;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .gallery-subtitle {

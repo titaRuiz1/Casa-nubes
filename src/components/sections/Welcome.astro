@@ -48,9 +48,14 @@ import { images } from '../../data/images.js';
 
   .welcome-image-wrapper {
     width: 70%;
-    height: 600px;
+    height: 700px;
     overflow: hidden;
     margin-left: auto;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 400px;
+    }
   }
 
   .welcome-image-wrapper img {
@@ -64,57 +69,71 @@ import { images } from '../../data/images.js';
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
-    width: 35%;
-    max-width: 500px;
+    width: 42%;
+    max-width: 580px;
     z-index: 10;
+    padding: 45px;
   }
 
   .welcome-box {
     background-color: var(--color-section-beige);
-    padding: 3rem 2.5rem;
+    padding: 2rem 2.5rem;
   }
 
   .welcome-title {
     color: var(--color-section-dark);
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
     text-align: center;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.15em;
+    padding: 16px 0px 8px;
+    margin: 0;
   }
 
   .welcome-separator-container {
+    text-align: center;
+    margin: 12px 0px 20px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
   }
 
   .welcome-separator-line {
     flex: 1;
     height: 1px;
-    background-color: white;
+    background-color: var(--color-section-white);
     border: none;
-    max-width: 100px;
+    max-width: 150px;
   }
 
   .welcome-separator-icon {
-    color: var(--color-section-dark);
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--color-section-dark);
+    flex-shrink: 0;
+  }
+
+  .welcome-separator-icon svg {
+    width: 30px;
+    height: 22px;
   }
 
   .welcome-text {
     color: var(--color-section-dark);
-    font-size: 1rem;
-    line-height: 1.7;
+    font-family: 'Nunito', sans-serif;
     text-align: center;
+    font-weight: 400;
+    padding: 0px 32px;
   }
 
   .welcome-text p {
     margin: 0;
+    font-size: 21px;
+    line-height: 1.8;
   }
 
   /* Mobile: Text box below image */
