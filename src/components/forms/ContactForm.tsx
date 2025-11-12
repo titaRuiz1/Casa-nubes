@@ -3,11 +3,20 @@ import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { sendNotification } from "@/services/notifications.service";
+import { navigate } from "astro:transitions/client";
 
-export function Form({ id }: { id: string }) {
+interface FormProps {
+  id: string;
+  [key: string]: any; // Permite props adicionales de Astro
+}
 
+export function Form({ id }: FormProps) {
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -20,10 +29,29 @@ export function Form({ id }: { id: string }) {
     setData({ ...data, [e.target.name]: e.target.value });
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(data);
+    try {
+      await sendNotification(data);
+      setSuccess('Mensaje enviado correctamente.');
+    } catch (error) {
+      if(error instanceof Error && error.message === 'RATE_LIMIT_EXCEEDED') {
+        setError('Podrás enviar otro mensaje en unos minutos.');
+      }
+      console.error(error);
+    } finally {
+      setTimeout(() => {
+        setError(null);
+        setSuccess(null);
+      }, 3500);
+    }
   }
+
+  useEffect(() => {
+    const isValid = data.name !== "" && data.email !== "" && data.phone !== "" && data.terms;
+    setIsDisabled(!isValid);
+  }, [data]);
 
   return (
     <div  id={id} className="min-h-screen py-16 px-4 bg-[#ede6cc] font-[Nunito,sans-serif]">
@@ -75,7 +103,7 @@ export function Form({ id }: { id: string }) {
             name="name"
             value={data.name}
             onChange={handleChange}
-            className="text-base px-4 py-3 border-[#d2b894] rounded"
+            className="text-base px-4 py-3 border-[#d2b894] rounded text-black"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -85,7 +113,7 @@ export function Form({ id }: { id: string }) {
               name="email"
               value={data.email}
               onChange={handleChange}
-              className="text-base px-4 py-3 border-[#d2b894] rounded"
+              className="text-base px-4 py-3 border-[#d2b894] rounded text-black"
             />
             <Input
               type="tel"
@@ -93,7 +121,7 @@ export function Form({ id }: { id: string }) {
               name="phone"
               value={data.phone}
               onChange={handleChange}
-              className="text-base px-4 py-3 border-[#d2b894] rounded"
+              className="text-base px-4 py-3 border-[#d2b894] rounded text-black"
             />
           </div>
 
@@ -103,7 +131,7 @@ export function Form({ id }: { id: string }) {
             value={data.message}
             onChange={handleChange}
             rows={6}
-            className="text-base px-4 py-3 border-[#d2b894] rounded resize-y"
+            className="text-base px-4 py-3 border-[#d2b894] rounded resize-y text-black"
           />
 
           <div className="flex items-start gap-3 mt-2">
@@ -127,10 +155,13 @@ export function Form({ id }: { id: string }) {
 
           <Button
             type="submit"
+            disabled={isDisabled}
             className="mt-4 bg-[#6c6534] hover:bg-[#5a5429] text-white px-8 py-3.5 text-[17px] font-semibold rounded tracking-wide transition-all"
           >
             Envía tu mensaje
           </Button>
+          {error && <span style={{ color: 'red' }}>{error}</span>}
+          {success && <span style={{ color: 'green' }}>{success}</span>}
         </form>
       </div>
     </div>
