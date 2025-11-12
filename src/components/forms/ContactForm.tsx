@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { useEffect, useState } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { sendNotification } from "@/services/notifications.service";
-import { navigate } from "astro:transitions/client";
 
 interface FormProps {
   id: string;
@@ -31,7 +30,6 @@ export function Form({ id }: FormProps) {
 
   const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(data);
     try {
       await sendNotification(data);
       setSuccess('Mensaje enviado correctamente.');
@@ -54,16 +52,16 @@ export function Form({ id }: FormProps) {
   }, [data]);
 
   return (
-    <div  id={id} className="min-h-screen py-16 px-4 bg-[#ede6cc] font-[Nunito,sans-serif]">
+    <div  id={id} className="min-h-screen py-8 md:py-16 px-4 bg-[#ede6cc] font-[Nunito,sans-serif]">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1b1202] tracking-[0.15em]">
+        <div className="text-center mb-12 md:mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 md:mb-4 text-[#1b1202] tracking-[0.15em]">
             CONTACTO
           </h2>
 
           {/* Separator */}
-          <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="flex items-center justify-center gap-4 mb-4">
             <div className="flex-1 h-px bg-[#6c6534] max-w-[120px]" />
             <div className="text-[#6c6534]">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" viewBox="0 0 357 357">
@@ -76,7 +74,7 @@ export function Form({ id }: FormProps) {
           {/* <h3 className="text-2xl font-semibold mb-3 text-[#312e17]">
             La Casa del Bosque de Nubes
           </h3> */}
-          <div className="text-base leading-relaxed text-[#312e17] space-y-2">
+          <div className="text-base leading-relaxed text-[#312e17] space-y-2 mb-4 md:mb-0">
             <div className="flex items-center justify-center gap-3">
               <Mail className="w-4 h-4" />
               <p>reservas@casanubegocta.com</p>

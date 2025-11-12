@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { images } from "../data/images.js";
+import { CarouselComponent } from "../components/carousel/Carousel.tsx";
 
 const coverImage = images.rooms.gatmalap[7];
 const textImage = images.rooms.gatmalap[7];
@@ -89,57 +90,7 @@ const carouselImages = [
       </div>
     </section>
 
-    <!-- Carousel Section -->
-    <section
-      id="carousel-section"
-      class="py-10 md:py-10 lg:py-10 bg-section-beige"
-    >
-      <div class="carousel-outer-container">
-        <div class="carousel-container">
-          <button
-            class="carousel-btn carousel-btn-prev"
-            id="prevBtn"
-            aria-label="Previous"
-          >
-            <svg viewBox="0 0 100 100" width="24" height="24">
-              <path
-                d="M 10,50 L 60,100 L 70,90 L 30,50 L 70,10 L 60,0 Z"
-                fill="black"></path>
-            </svg>
-          </button>
-
-          <div class="carousel-wrapper">
-            <div class="carousel-track" id="carouselTrack">
-              {
-                carouselImages.map((image, index) => (
-                  <div class="carousel-slide" data-index={index}>
-                    <img
-                      src={image}
-                      alt={`Habitación Gatmalap ${index + 1}`}
-                      class="carousel-image"
-                      loading="lazy"
-                    />
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-
-          <button
-            class="carousel-btn carousel-btn-next"
-            id="nextBtn"
-            aria-label="Next"
-          >
-            <svg viewBox="0 0 100 100" width="24" height="24">
-              <path
-                d="M 10,50 L 60,100 L 70,90 L 30,50 L 70,10 L 60,0 Z"
-                transform="translate(100, 100) rotate(180)"
-                fill="black"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </section>
+    <CarouselComponent images={carouselImages} client:load />
   </main>
 
   <Footer />
@@ -168,15 +119,18 @@ const carouselImages = [
   @media (max-width: 700px) {
     .single-image-wrapper {
       min-height: 300px;
+      object-position: center;
+
     }
 
     #block_text_image .flex {
       flex-direction: column;
     }
+
   }
 
   /* Carousel Styles */
-  .carousel-outer-container {
+  /* .carousel-outer-container {
     width: 100%;
     max-width: 100%;
     padding: 0;
@@ -198,6 +152,7 @@ const carouselImages = [
     display: flex;
     gap: 0.5rem;
     transition: transform 0.5s ease-in-out;
+    align-items: center;
   }
 
   .carousel-slide {
@@ -210,6 +165,7 @@ const carouselImages = [
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
   }
 
@@ -246,7 +202,7 @@ const carouselImages = [
   }
 
   /* Desktop: Show multiple slides */
-  @media (min-width: 701px) {
+  /* @media (min-width: 701px) {
     .carousel-slide {
       width: calc(25% - 0.75rem);
     }
@@ -275,10 +231,10 @@ const carouselImages = [
     .carousel-btn-next {
       right: 0.5rem;
     }
-  }
+  } */
 </style>
 
-<script>
+<!-- <script>
   const track = document.getElementById("carouselTrack");
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
@@ -289,7 +245,7 @@ const carouselImages = [
 
   // Determine slides per view based on screen size
   function getSlidesPerView() {
-    return window.innerWidth > 770 ? 4 : 4;
+    return window.innerWidth > 770 ? 4 : 1;
   }
 
   function updateCarousel() {
@@ -391,4 +347,4 @@ const carouselImages = [
 
   // Initial setup
   updateCarousel();
-</script>
+</script> -->

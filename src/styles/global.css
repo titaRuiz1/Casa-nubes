@@ -127,7 +127,7 @@ body {
 
 img {
   max-width: 100%;
-  height: auto;
+  /* height: auto; */
   display: block;
 }
 
@@ -289,6 +289,14 @@ h2 {
   color: #2e2925;
   text-transform: none;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 22px;
+  }
 }
 
 h3 {
@@ -385,6 +393,15 @@ a {
   text-transform: none;
   text-align: center;
   margin-bottom: 1.5rem;
+
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 22px;
+  }
 }
 
 .gallery-subtitle {

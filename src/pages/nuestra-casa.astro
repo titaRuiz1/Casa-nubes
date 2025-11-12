@@ -36,7 +36,7 @@ const ourHouseImages = [images.ourHouse[1], images.ourHouse[2], images.ourHouse[
     </div>
     
     <!-- Text Block with Multiple Images Section -->
-    <section id="block_1412185" class="py-10 md:py-16 lg:py-20 bg-section-beige">
+    <section id="block_1412185" class="py-0 md:py-16 lg:py-20 bg-section-beige">
       <div class="container-custom mx-auto lg:px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row lg:gap-16 items-stretch justify-center">
           <!-- Left Side: Images Grid -->
@@ -190,6 +190,7 @@ const ourHouseImages = [images.ourHouse[1], images.ourHouse[2], images.ourHouse[
       grid-template-rows: auto;
       gap: 1rem;
       height: auto;
+      margin-top: 16px;
     }
 
     .image-grid-item-tall,
@@ -211,6 +212,11 @@ const ourHouseImages = [images.ourHouse[1], images.ourHouse[2], images.ourHouse[
     #block_1412185 .w-full.lg\:w-5\/12 {
       width: 100%;
       margin-top: 1.5rem;
+    }
+
+    #block_1412185 .w-full.lg\:w-5\/12.p-0 {
+      padding-top: 0;
+      margin-top: 0;
     }
   }
 
