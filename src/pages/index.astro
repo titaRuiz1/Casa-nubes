@@ -7,8 +7,8 @@ import Welcome from '../components/sections/Welcome.astro';
 import Gallery from '../components/sections/Gallery.jsx';
 import NearbyPlaces from '../components/sections/NearbyPlaces.astro';
 import Services from '../components/sections/Services.astro';
-import Contact from '../components/sections/Contact.astro';
 import { images } from '../data/images.js';
+import { Form } from './contacto2';
 ---
 
 <Layout
@@ -34,7 +34,8 @@ import { images } from '../data/images.js';
     <Services />
 
     <!-- Formulario de Contacto -->
-    <Contact />
+    <!-- <Contact /> -->
+    <Form id="contacto" client:load />
   </main>
 
   <Footer />

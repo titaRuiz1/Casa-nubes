@@ -8,8 +8,16 @@ const currentYear = new Date().getFullYear();
 
 <footer class="bg-[white]">
   <div class="footer-inner">
-    <strong>La Casa del Bosque de Nubes</strong><br/>
-    Camino a Gocta, Cocachimba, Amazonas, Perú<br/>
+    <!-- <strong>La Casa del Bosque de Nubes</strong><br/>
+    Camino a Gocta, Cocachimba, Amazonas, Perú<br/> -->
+    <div class="flex items-center justify-center gap-2">
+      <a href="https://www.instagram.com/lacasadelbosquedenubes.gocta/#" target="_blank">
+        <img 
+          src="https://w7.pngwing.com/pngs/454/401/png-transparent-logo-instagram-text-logo-number-thumbnail.png"
+          alt="Instagram" class="w-6 h-6">
+      </a>
+      <h3>La Casa del Bosque de Nubes</h2>
+    </div>
     <span class="muted">© {currentYear} — Todos los derechos reservados</span>
   </div>
 </footer>
@@ -24,7 +32,10 @@ const currentYear = new Date().getFullYear();
   .footer-inner {
     max-width: var(--container);
     margin: 0 auto;
-    padding: var(--space-10) var(--space-4);
+    padding: var(--space-8) var(--space-4);
     line-height: 1.8;
+    text-align: center;
   }
+
+
 </style>
