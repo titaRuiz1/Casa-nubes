@@ -6,7 +6,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy:netlify": "pnpm build && pnpm dlx netlify-cli deploy --prod",
+    "deploy:netlify:preview": "pnpm build && pnpm dlx netlify-cli deploy",
+    "deploy:aws": "pnpm build && aws s3 sync dist/ s3://$AWS_S3_BUCKET --delete && aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_ID --paths '/*'",
+    "deploy:aws:s3-only": "pnpm build && aws s3 sync dist/ s3://$AWS_S3_BUCKET --delete"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.5",
