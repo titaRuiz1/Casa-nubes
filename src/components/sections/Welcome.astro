@@ -47,6 +47,7 @@ import { images } from '../../data/images.js';
   }
 
   .welcome-image-wrapper {
+    position: relative;
     width: 70%;
     height: 700px;
     overflow: hidden;
@@ -62,17 +63,20 @@ import { images } from '../../data/images.js';
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center right;
   }
 
   .welcome-text-overlay {
     position: absolute;
     top: 50%;
-    left: 5%;
+    left: 6.5%;
     transform: translateY(-50%);
-    width: 42%;
-    max-width: 580px;
+    width: 437px;
+    max-height: 355.75px;
     z-index: 10;
-    padding: 45px;
+    padding: 40px 30px;
+    background-color:var(--color-background-yellow);
+    color: #2e2925;
   }
 
   .welcome-box {
@@ -81,19 +85,16 @@ import { images } from '../../data/images.js';
   }
 
   .welcome-title {
-    color: var(--color-section-dark);
     font-family: 'Nunito', sans-serif;
-    font-size: 28px;
-    font-weight: 400;
+    font-size: 27px;
     text-align: center;
-    letter-spacing: 0.15em;
-    padding: 16px 0px 8px;
     margin: 0;
   }
 
   .welcome-separator-container {
     text-align: center;
-    margin: 12px 0px 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,7 +107,7 @@ import { images } from '../../data/images.js';
     height: 1px;
     background-color: var(--color-section-white);
     border: none;
-    max-width: 150px;
+    max-width: 100px;
   }
 
   .welcome-separator-icon {
@@ -123,17 +124,16 @@ import { images } from '../../data/images.js';
   }
 
   .welcome-text {
-    color: var(--color-section-dark);
+    color: #333333;
     font-family: 'Nunito', sans-serif;
-    text-align: center;
-    font-weight: 400;
-    padding: 0px 32px;
   }
-
+  
   .welcome-text p {
     margin: 0;
+    font-family: 'Nunito';
     font-size: 21px;
-    line-height: 1.8;
+    color: #2e2925;
+    line-height: 1.5;
   }
 
   /* Mobile: Text box below image */
@@ -153,6 +153,8 @@ import { images } from '../../data/images.js';
       transform: none;
       width: 100%;
       max-width: 100%;
+      height: auto;
+      padding: 40px 30px;
     }
 
     .welcome-box {

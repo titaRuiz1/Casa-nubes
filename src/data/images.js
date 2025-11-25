@@ -8,7 +8,8 @@ export const images = {
 
   // Sección de bienvenida
   welcome: {
-    default: 'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Bienvenidos-20251022T015624Z-1-001/Bienvenidos/Bienvenidos.jpg',
+    // default: 'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Bienvenidos-20251022T015624Z-1-001/Bienvenidos/Bienvenidos.jpg',
+    default:'https://casa-del-bosque.s3.us-east-1.amazonaws.com/Bienvenidos-20251022T015624Z-1-001/Bienvenidos/bienvenidos2.jpg'
   },
 
   // Habitaciones
