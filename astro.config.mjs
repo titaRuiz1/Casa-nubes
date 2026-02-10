@@ -8,7 +8,12 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   integrations: [react()],
 
+  build: {
+    format: 'file'
+  },
+
   vite: {
     plugins: [tailwindcss()]
   }
 });
+
